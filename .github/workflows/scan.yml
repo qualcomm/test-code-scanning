@@ -29,3 +29,10 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+  is_public:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only for public repositories
+        if: ${{ !github.event.repository.private }}
+        run: echo "This step runs only if the repository is public."
+
