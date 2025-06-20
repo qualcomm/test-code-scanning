@@ -33,6 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run only for public repositories
-        if: ${{ !github.event.repository.private }}
+        if: ${{ github.event.repository.private }}
         run: echo "This step runs only if the repository is public."
 
